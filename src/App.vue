@@ -1,13 +1,6 @@
 <template>
   <the-nav-bar></the-nav-bar>
-  <!-- <transition
-    :css="false"
-    @beforeEnter="beforeEnter"
-    @enter="enter"
-    @leave="leave"
-  >
-    <router-view />
-  </transition> -->
+
   <router-view v-if="getInnerWidth >= 1280" v-slot="{ Component }">
     <transition
       mode="out-in"

@@ -11,7 +11,9 @@
       class="leading-5 w-5/6 tracking-tight py-2 row-span-2 md:text-xl lg:text-2xl xl:col-span-1 xl:row-span-2 xl:row-start-2 xl:col-start-1 xl:w-3/4 xl:text-2xl"
       >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum mollitia
       eaque eius distinctio sed quod fuga. Omnis perferendis officia rem
-      deleniti magni reprehenderit illo.</p
+      deleniti magni reprehenderit illo. Lorem ipsum dolor sit amet consectetur
+      adipisicing elit.dolore deleniti veritatis rem ipsa quidem omnis repellat
+      nemo ra.</p
     >
     <router-link
       class="py-4 row-span-1 md:text-xl lg:text-xl xl:row-start-4 xl:col-start-1"

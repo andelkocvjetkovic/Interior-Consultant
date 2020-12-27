@@ -3,7 +3,7 @@
     class="flex justify-between bg-gray-900 text-white p-4 xl:justify-start xl:px-16"
   >
     <div
-      class="p-2 border-2 border-gray-50 font-serif  xl:p-3 cursor-pointer "
+      class="p-2 font-bold border-2 lg:border-4 border-gray-50 font-serif  xl:p-3 cursor-pointer  hover:bg-gray-50 hover:text-gray-900"
       @click="toHome"
       >THIS INTERIOR</div
     >
