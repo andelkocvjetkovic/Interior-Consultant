@@ -1,6 +1,6 @@
 <template>
-  <div class="py-9 px-4 min-h-screen m-auto text-gray-50 prose">
-    <h1 class="textH1">This is an about page</h1>
+  <div class="text-gray-50 min-h-screen py-9 px-4 prose m-auto">
+    <h1 class="textH1">This is a contact page</h1>
     <p
       >Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quae
       fugit delectus quaerat aliquid repudiandae, voluptates magni quis expedita

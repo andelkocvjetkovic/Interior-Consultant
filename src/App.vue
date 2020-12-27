@@ -1,30 +1,72 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <the-nav-bar></the-nav-bar>
+  <!-- <transition
+    :css="false"
+    @beforeEnter="beforeEnter"
+    @enter="enter"
+    @leave="leave"
+  >
+    <router-view />
+  </transition> -->
+  <router-view v-if="getInnerWidth >= 1280" v-slot="{ Component }">
+    <transition
+      mode="out-in"
+      :css="false"
+      @beforeEnter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >
+      <component :is="Component" />
+    </transition>
+  </router-view>
+  <router-view v-else></router-view>
+  <the-footer></the-footer>
 </template>
-
+<script>
+import TheFooter from "./components/TheFooter.vue";
+import TheNavBar from "./components/TheNavBar.vue";
+import { computed } from "vue";
+import gsap from "gsap";
+export default {
+  components: { TheNavBar, TheFooter },
+  setup() {
+    var getInnerWidth = computed(function getWidth() {
+      return window.innerWidth;
+    });
+    function beforeEnter(el) {
+      gsap.set(el, { opacity: 0 });
+    }
+    function enter(el, done) {
+      gsap.to(el, {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power1.out",
+        onComplete: done,
+      });
+    }
+    function leave(el, done) {
+      gsap.to(el, {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power1.in",
+        onComplete: done,
+      });
+    }
+    return { beforeEnter, enter, leave, getInnerWidth };
+  },
+};
+</script>
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @apply bg-gray-900;
+  @apply w-screen;
 
-#nav {
-  padding: 30px;
+  @apply xl:max-w-full;
+  @apply min-h-screen;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.textH1 {
+  @apply text-gray-50 !important;
 }
 </style>
